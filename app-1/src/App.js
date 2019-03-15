@@ -3,16 +3,27 @@ import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state={
+      userInput: ''
+    }
+  }
+
+  handleInputOnChange = (e)=>{
+    this.setState({
+      userInput: e.target.value
+    })
+  }
+  // code above updates the user input and equates it to the value of the input
+  
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <input type="text" onChange={(e)=>{this.handleInputOnChange(e)}}/>
+        {/* the input above has an attribute called onChange that will invoke an anonymous function that will invoke handleInputOnChange */}
+        <h1>{this.state.userInput}</h1>
       </div>
     );
   }

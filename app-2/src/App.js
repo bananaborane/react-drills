@@ -1,18 +1,32 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      favfoods: ['spaghetti', 'ice cream', 'sushi', 'bologna', 'cheese']
+    }
+  }
+  componentWillMount(){
+    console.log('from componentWillMount')
+  }
+
+  componentDidMount(){
+    console.log('from componentDidMount')
+  }
+
   render() {
+    let displayArray = this.state.favfoods.map((val, i)=>{
+      return (<h2 key={i}>
+        {val}
+        </h2>)
+    })
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>{displayArray}</div>
+        {console.log('from render')}
       </div>
     );
   }
