@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import Todo from "./Todo";
 
@@ -8,7 +8,7 @@ class App extends Component {
     super();
 
     this.state = {
-      toDoArray: ['play some overwatch', 'buy some juice'],
+      toDoArray: ['play some overwatch', 'buy some pom juice'],
       input: ""
     };
 
@@ -34,7 +34,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>My to-do toDoArray:</h1>
+        <h1>My to-do List:</h1>
 
         <div>
           <input
